@@ -344,8 +344,8 @@ body {
   }
 
   .cta-button {
-    font-size: 0.98rem;
-    padding: 14px 18px;
+    font-size: 0.9rem;
+    padding: 13px 16px;
     max-width: 100%;
     border-radius: 30px;
   }
@@ -474,15 +474,15 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 12px;
+  gap: 10px;
   width: 100%;
   max-width: 440px;
-  padding: 18px 36px;
+  padding: 15px 30px;
   background: linear-gradient(135deg, #00e676 0%, #00b0ff 100%);
   color: #000;
   font-family: var(--font-heading);
   font-weight: 900;
-  font-size: 1.2rem;
+  font-size: 1.05rem;
   text-decoration: none;
   border-radius: 50px;
   box-shadow: 0 10px 30px rgba(0, 230, 118, 0.4);
