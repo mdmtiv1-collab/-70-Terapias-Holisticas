@@ -6,10 +6,18 @@
   <title>Formación Integral en 70 Terapias Holísticas | Credencial Oficial & Certificación Internacional</title>
   <meta name="description" content="Accede a la plataforma de formación holística más completa del mundo hispano. 70 disciplinas, Carnet Digital de Terapeuta y Certificación Internacional por solo $9.90 USD. Acceso de por vida.">
   
+  <!-- Preconnect & Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
+  
+  <!-- Preload Hero Image for instant LCP -->
+  <link rel="preload" as="image" href="assets/hero_mockup.webp" fetchpriority="high">
+
   <!-- Open Graph -->
   <meta property="og:title" content="Formación Integral en 70 Terapias Holísticas | Instituto Hispano">
   <meta property="og:description" content="Obtén tu Credencial de Terapeuta y Certificaciones Internacionales. 70 cursos completos por un único pago de $9.90 USD.">
-  <meta property="og:image" content="assets/plataforma.jpg">
+  <meta property="og:image" content="assets/hero_mockup.webp">
   
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -47,7 +55,7 @@
 
       <!-- Main Showcase Image -->
       <div class="mockup-img-wrap" style="max-width: 950px; margin: 0 auto 35px;">
-        <img src="assets/hero_mockup.jpg" alt="Biblioteca Digital de Terapias Holísticas" loading="eager">
+        <img src="assets/hero_mockup.webp" alt="Biblioteca Digital de Terapias Holísticas" width="950" height="534" fetchpriority="high" loading="eager">
       </div>
 
       <!-- Main Call to Action -->
@@ -81,7 +89,7 @@
     <section class="mockup-showcase">
       <div class="mockup-grid">
         <div class="mockup-img-wrap">
-          <img src="assets/carnet.jpg" alt="Carnet de Terapeuta Holístico">
+          <img src="assets/carnet.webp" alt="Carnet de Terapeuta Holístico" width="600" height="450" loading="lazy" decoding="async">
         </div>
         <div class="mockup-details">
           <span class="badge-tag">INCLUIDO SIN COSTO ADICIONAL</span>
@@ -104,7 +112,7 @@
     <section class="mockup-showcase">
       <div class="mockup-grid" style="direction: rtl;">
         <div class="mockup-img-wrap" style="direction: ltr;">
-          <img src="assets/certificado.jpg" alt="Certificado Internacional en Terapias">
+          <img src="assets/certificado.webp" alt="Certificado Internacional en Terapias" width="600" height="450" loading="lazy" decoding="async">
         </div>
         <div class="mockup-details" style="direction: ltr;">
           <span class="badge-tag">VALIDEZ INTERNACIONAL</span>
@@ -249,6 +257,6 @@
     </div>
   </div>
 
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </body>
 </html>
