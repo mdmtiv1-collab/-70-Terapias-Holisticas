@@ -22,7 +22,31 @@ document.addEventListener('DOMContentLoaded', () => {
     question.addEventListener('click', () => {
       const item = question.parentElement;
       item.classList.toggle('active');
+    
+  // 4. Exit Intent Popup Logic
+  const exitPopup = document.getElementById('exit-popup');
+  const closePopup = document.getElementById('close-popup');
+  let popupShown = false;
+
+  document.addEventListener('mouseleave', (e) => {
+    if (e.clientY <= 10 && !popupShown && exitPopup) {
+      popupShown = true;
+      exitPopup.style.display = 'flex';
+    }
+  });
+
+  if (closePopup && exitPopup) {
+    closePopup.addEventListener('click', () => {
+      exitPopup.style.display = 'none';
     });
+    exitPopup.addEventListener('click', (e) => {
+      if (e.target === exitPopup) {
+        exitPopup.style.display = 'none';
+      }
+    });
+  }
+
+});
   });
 
   // 3. Social Proof Toast Notifications
