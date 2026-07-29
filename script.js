@@ -23,22 +23,34 @@ document.addEventListener('DOMContentLoaded', () => {
       const item = question.parentElement;
       item.classList.toggle('active');
     
-  // 4. Exit Intent Popup Logic
-  const exitPopup = document.getElementById('exit-popup');
-  const closePopup = document.getElementById('close-popup');
-  let popupShown = false;
-
-  document.addEventListener('mouseleave', (e) => {
-    if (e.clientY <= 10 && !popupShown && exitPopup) {
-      popupShown = true;
-      exitPopup.style.display = 'flex';
-    }
-  });
-
   if (closePopup && exitPopup) {
     closePopup.addEventListener('click', () => {
       exitPopup.style.display = 'none';
+    
+  // 4. Basic Plan Upsell Popup Trigger ($13.90 USD Offer)
+  const btnBasicTrigger = document.getElementById('btn-basic-trigger');
+  const upsellModal = document.getElementById('upsell-modal');
+  const closeUpsellModal = document.getElementById('close-upsell-modal');
+
+  if (btnBasicTrigger && upsellModal) {
+    btnBasicTrigger.addEventListener('click', (e) => {
+      e.preventDefault();
+      upsellModal.style.display = 'flex';
     });
+  }
+
+  if (closeUpsellModal && upsellModal) {
+    closeUpsellModal.addEventListener('click', () => {
+      upsellModal.style.display = 'none';
+    });
+    upsellModal.addEventListener('click', (e) => {
+      if (e.target === upsellModal) {
+        upsellModal.style.display = 'none';
+      }
+    });
+  }
+
+});
     exitPopup.addEventListener('click', (e) => {
       if (e.target === exitPopup) {
         exitPopup.style.display = 'none';

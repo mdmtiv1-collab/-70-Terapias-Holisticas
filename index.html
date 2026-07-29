@@ -202,12 +202,9 @@
             </div>
 
             <div>
-              <a href="https://pay.hotmart.com/J106923621O?off=gpayy6jv&checkoutMode=10" target="_blank" class="cta-button" style="max-width: 100%; font-size: 0.95rem; background: linear-gradient(135deg, #475569 0%, #1e293b 100%); color: #fff; box-shadow: none; animation: none;">
+              <button id="btn-basic-trigger" class="cta-button" style="max-width: 100%; font-size: 0.95rem; background: linear-gradient(135deg, #475569 0%, #1e293b 100%); color: #fff; box-shadow: none; animation: none; cursor: pointer;">
                 ELEGIR PLAN BÁSICO POR $9.90
-              </a>
-              <p style="font-size: 0.78rem; color: var(--accent-gold-bright); margin-top: 12px; font-weight: 700; line-height: 1.4;">
-                💡 Tip: Por solo $10 USD más obtén tu Credencial Oficial + 70 Certificados + 2 Bonos en el Plan Completo.
-              </p>
+              </button>
             </div>
           </div>
 
@@ -320,22 +317,45 @@
 
   <script src="script.js" defer></script>
 
-  <!-- Exit Intent Popup Modal -->
-  <div id="exit-popup" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.85); backdrop-filter:blur(8px); z-index:99999; justify-content:center; align-items:center; padding:20px;">
-    <div style="background:linear-gradient(180deg,#1c2032 0%,#0d0f17 100%); border:2px solid var(--accent-gold); border-radius:24px; max-width:520px; width:100%; padding:35px 25px; text-align:center; position:relative; box-shadow:0 25px 70px rgba(0,0,0,0.8); animation:popupFade 0.3s ease;">
-      <button id="close-popup" style="position:absolute; top:15px; right:18px; background:none; border:none; color:#94a3b8; font-size:1.6rem; cursor:pointer; font-weight:bold;">&times;</button>
+  
+
+
+  <!-- Plan Básico Upsell Modal ($13.90 USD Offer) -->
+  <div id="upsell-modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.85); backdrop-filter:blur(10px); z-index:99999; justify-content:center; align-items:center; padding:20px;">
+    <div style="background:linear-gradient(180deg,#1c2032 0%,#0d0f17 100%); border:2px solid var(--accent-gold); border-radius:24px; max-width:540px; width:100%; padding:35px 25px; text-align:center; position:relative; box-shadow:0 25px 70px rgba(0,0,0,0.8); animation:popupFade 0.3s ease;">
+      <button id="close-upsell-modal" style="position:absolute; top:15px; right:18px; background:none; border:none; color:#94a3b8; font-size:1.6rem; cursor:pointer; font-weight:bold;">&times;</button>
       
-      <div style="font-size:3rem; margin-bottom:10px;">⚠️</div>
-      <span class="badge-tag" style="background:rgba(255,193,7,0.15); color:var(--accent-gold-bright); border-color:var(--accent-gold);">¡OFERTA DE RETENCIÓN EXCLUSIVA!</span>
-      <h3 style="font-family:var(--font-heading); font-size:1.7rem; color:#fff; margin:12px 0 8px;">¡ESPERA! NO TE VAYAS CON LAS MANOS VACÍAS</h3>
-      <p style="color:var(--text-muted); font-size:0.95rem; margin-bottom:20px; line-height:1.5;">
-        Asegura tu acceso inmediato a las 70 Terapias Holísticas con este enlace promocional especial directo al checkout.
+      <div style="font-size:3rem; margin-bottom:8px;">🔥</div>
+      <span class="badge-tag" style="background:rgba(255,193,7,0.15); color:var(--accent-gold-bright); border-color:var(--accent-gold);">OFERTA ÚNICA DE ÚLTIMA HORA</span>
+      
+      <h3 style="font-family:var(--font-heading); font-size:1.75rem; color:#fff; margin:12px 0 8px; line-height:1.25;">
+        ¡Llévate el <span class="text-gradient-gold">PLAN COMPLETO</span> por solo <span style="color:var(--green-success);">$13.90 USD</span>!
+      </h3>
+      
+      <p style="color:var(--text-muted); font-size:0.92rem; margin-bottom:18px; line-height:1.5;">
+        Antes de ir al checkout del Plan Básico, queremos ofrecerte por <strong>solo $4.00 USD más</strong> el Plan Completo (Credencial Oficial + 70 Certificados + 2 Bonos).
       </p>
 
-      <a href="https://pay.hotmart.com/J106923621O?off=ggd7v4fo&checkoutMode=10" target="_blank" class="cta-button" style="max-width:100%; font-size:1.05rem;">
-        ¡APROVECHAR OFERTA POPUP AHORA!
+      <div style="background:rgba(0,230,118,0.08); border:1px dashed var(--green-success); border-radius:16px; padding:15px; text-align:left; margin-bottom:20px;">
+        <p style="color:#fff; font-weight:700; font-size:0.88rem; margin-bottom:6px;">🎁 Lo que recibes por $13.90 USD (en lugar de $19.90):</p>
+        <ul style="list-style:none; padding:0; margin:0; font-size:0.84rem; color:var(--text-main);">
+          <li style="margin-bottom:4px;">✓ Acceso Vitalicio a las 70 Terapias Holísticas</li>
+          <li style="margin-bottom:4px;">✓ <strong>Carnet Digital Oficial de Terapeuta Acreditado</strong></li>
+          <li style="margin-bottom:4px;">✓ <strong>70 Certificados de Finalización (180h cada uno)</strong></li>
+          <li style="margin-bottom:4px;">✓ <strong>Bono 1:</strong> Manual de Diagnóstico Energético</li>
+          <li>✓ <strong>Bono 2:</strong> Plantillas Editables de Ficha Clínica</li>
+        </ul>
+      </div>
+
+      <!-- Main Upgrade CTA Button ($13.90) -->
+      <a href="https://pay.hotmart.com/J106923621O?off=ggd7v4fo&checkoutMode=10" target="_blank" class="cta-button" style="max-width:100%; font-size:1.02rem; margin-bottom:14px;">
+        ¡SÍ! QUIERO EL PLAN COMPLETO POR $13.90 USD
       </a>
-      <p class="price-subtext" style="margin-top:12px;">🔒 Transacción 100% Segura • Garantía de 7 Días</p>
+
+      <!-- Secondary Decline Link ($9.90 Básico) -->
+      <a href="https://pay.hotmart.com/J106923621O?off=gpayy6jv&checkoutMode=10" target="_blank" style="display:inline-block; color:var(--text-muted); font-size:0.8rem; text-decoration:underline; cursor:pointer;">
+        No gracias, deseo continuar con el Plan Básico ($9.90 USD) sin credencial ni certificados
+      </a>
     </div>
   </div>
 
