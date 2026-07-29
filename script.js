@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const timerElement = document.getElementById('timer');
 
   function updateTimer() {
+    if (!timerElement) return;
     const minutes = Math.floor(timeInSeconds / 60);
     const seconds = timeInSeconds % 60;
     timerElement.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
@@ -22,43 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
     question.addEventListener('click', () => {
       const item = question.parentElement;
       item.classList.toggle('active');
-    
-  if (closePopup && exitPopup) {
-    closePopup.addEventListener('click', () => {
-      exitPopup.style.display = 'none';
-    
-  // 4. Basic Plan Upsell Popup Trigger ($13.90 USD Offer)
-  const btnBasicTrigger = document.getElementById('btn-basic-trigger');
-  const upsellModal = document.getElementById('upsell-modal');
-  const closeUpsellModal = document.getElementById('close-upsell-modal');
-
-  if (btnBasicTrigger && upsellModal) {
-    btnBasicTrigger.addEventListener('click', (e) => {
-      e.preventDefault();
-      upsellModal.style.display = 'flex';
     });
-  }
-
-  if (closeUpsellModal && upsellModal) {
-    closeUpsellModal.addEventListener('click', () => {
-      upsellModal.style.display = 'none';
-    });
-    upsellModal.addEventListener('click', (e) => {
-      if (e.target === upsellModal) {
-        upsellModal.style.display = 'none';
-      }
-    });
-  }
-
-});
-    exitPopup.addEventListener('click', (e) => {
-      if (e.target === exitPopup) {
-        exitPopup.style.display = 'none';
-      }
-    });
-  }
-
-});
   });
 
   // 3. Social Proof Toast Notifications
@@ -92,7 +57,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
     saleIndex = (saleIndex + 1) % sales.length;
   }
-  // Show first toast after 3 seconds, then cycle every 12 seconds
   setTimeout(showToast, 3000);
   setInterval(showToast, 12000);
+
+  // 4. Basic Plan Upsell Popup Trigger ($13.90 USD Offer)
+  const btnBasicTrigger = document.getElementById('btn-basic-trigger');
+  const upsellModal = document.getElementById('upsell-modal');
+  const closeUpsellModal = document.getElementById('close-upsell-modal');
+
+  if (btnBasicTrigger && upsellModal) {
+    btnBasicTrigger.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      upsellModal.style.display = 'flex';
+    });
+  }
+
+  if (closeUpsellModal && upsellModal) {
+    closeUpsellModal.addEventListener('click', () => {
+      upsellModal.style.display = 'none';
+    });
+    upsellModal.addEventListener('click', (e) => {
+      if (e.target === upsellModal) {
+        upsellModal.style.display = 'none';
+      }
+    });
+  }
 });
